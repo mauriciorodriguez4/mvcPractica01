@@ -1,0 +1,38 @@
+﻿@model mvcPractica01.Models.facultades
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edición</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="facultad_id" />
+            <div class="form-group">
+                <label asp-for="nombre_facultad" class="control-label"></label>
+                <input asp-for="nombre_facultad" class="form-control" />
+                <span asp-validation-for="nombre_facultad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
+            </div>
+            <div class="form-group p-2">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

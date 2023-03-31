@@ -1,0 +1,47 @@
+﻿@model IEnumerable<mvcPractica01.Models.carreras>
+
+@{
+    ViewData["Title"] = "Carreras UNICAES";
+}
+
+<h1>Carreras</h1>
+
+<p>
+    <a class="btn btn-primary text-light text-decoration-none" asp-action="Create">Nueva carrera</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_carrera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.facultad_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_carrera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.facultad_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.carrera_id">Editar</a> |
+                    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.carrera_id">Detalles</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.carrera_id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

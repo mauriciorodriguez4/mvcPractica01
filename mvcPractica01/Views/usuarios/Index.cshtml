@@ -1,0 +1,65 @@
+﻿@model IEnumerable<mvcPractica01.Models.usuarios>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Usuarios</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nuevo registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.carnet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.carrera_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.documento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carnet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carrera_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.usuario_id">Editar</a> |
+                    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.usuario_id">Detalles</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.usuario_id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

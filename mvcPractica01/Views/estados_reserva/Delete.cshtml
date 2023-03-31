@@ -1,0 +1,26 @@
+﻿@model mvcPractica01.Models.estados_reserva
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminacion</h1>
+
+<h3>¿Quieres eliminar este registro?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="estado_res_id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="btn btn-secondary text-light" asp-action="Index">Regresar</a>
+    </form>
+</div>

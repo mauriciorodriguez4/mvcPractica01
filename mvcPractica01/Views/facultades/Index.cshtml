@@ -1,0 +1,41 @@
+﻿@model IEnumerable<mvcPractica01.Models.facultades>
+
+@{
+    ViewData["Title"] = "Facultades";
+}
+
+<h1>Facultades</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nuevo registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_facultad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_facultad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.facultad_id">Editar</a> |
+                    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.facultad_id">Detalles</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.facultad_id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

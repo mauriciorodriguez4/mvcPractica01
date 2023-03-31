@@ -1,0 +1,23 @@
+﻿@model mvcPractica01.Models.estados_reserva
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles de estados de reservas</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.estado_res_id">Editar</a> |
+    <a class="btn btn-secondary text-light" asp-action="Index">Regresar</a>
+</div>

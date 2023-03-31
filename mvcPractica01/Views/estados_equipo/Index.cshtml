@@ -1,0 +1,41 @@
+﻿@model IEnumerable<mvcPractica01.Models.estados_equipo>
+
+@{
+    ViewData["Title"] = "Estados de equipos UNICAES";
+}
+
+<h1>Estados de equipos</h1>
+
+<p>
+    <a class="btn btn-primary text-light text-decoration-none" asp-action="Create">Nuevo registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.id_estados_equipo">Editar</a> |
+                    <a class="btn btn-secondary text-light" asp-action="Details" asp-route-id="@item.id_estados_equipo">Detalles</a> |
+                    <a class="btn btn-danger text-light" asp-action="Delete" asp-route-id="@item.id_estados_equipo">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
