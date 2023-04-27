@@ -4,8 +4,11 @@ namespace mvcPractica01.Models
     public class estados_equipo
     {
         [Key]
-        public int id_estados_equipo { get; set; }
-        public string descripcion { get; set; }
-        public string estado { get; set; }
+        [Display(Name = "ID")]
+        public int? id_estados_equipo { get; set; }
+        [Display(Name = "Descripción")]
+        public string? descripcion { get; set; }
+        [Display(Name = "Estado")]
+        public string? estado { get; set; }
     }
 }

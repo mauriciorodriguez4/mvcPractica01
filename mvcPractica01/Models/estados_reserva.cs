@@ -4,7 +4,9 @@ namespace mvcPractica01.Models
     public class estados_reserva
     {
         [Key]
-        public int estado_res_id { get; set; }
-        public string estado { get;set; }
+        [Display(Name = "ID")]
+        public int? estado_res_id { get; set; }
+        [Display(Name = "Estado")]
+        public string? estado { get; set; }
     }
 }

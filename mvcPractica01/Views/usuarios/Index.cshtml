@@ -27,9 +27,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.carrera_id)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.estado)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -51,9 +48,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.carrera_id)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.estado)
-            </td>
+
             <td>
                     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.usuario_id">Editar</a> |
                     <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.usuario_id">Detalles</a> |

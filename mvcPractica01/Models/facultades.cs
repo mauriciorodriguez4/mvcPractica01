@@ -4,8 +4,9 @@ namespace mvcPractica01.Models
     public class facultades
     {
         [Key]
+        [Display(Name = "ID")]
         public int facultad_id { get; set; }
-        public string nombre_facultad { get; set; }
-        public string estado { get; set; }
+        [Display(Name = "Nombre facultad")]
+        public string? nombre_facultad { get; set; }
     }
 }

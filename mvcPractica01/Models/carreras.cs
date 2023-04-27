@@ -4,9 +4,11 @@ namespace mvcPractica01.Models
     public class carreras
     {
         [Key]
+        [Display(Name = "ID")]
         public int carrera_id { get; set; }
-        public string nombre_carrera { get; set; }
-        public int facultad_id { get; set; }
-        public string estado { get; set;}
+        [Display(Name = "Nombre carrera")]
+        public string? nombre_carrera { get; set; }
+        [Display(Name = "ID Facultad")]
+        public int? facultad_id { get; set; }
     }
 }
